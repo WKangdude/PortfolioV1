@@ -1,0 +1,210 @@
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 232px;
+  background: var(--surface);
+  border-right: 1px solid var(--line);
+  z-index: 20;
+  padding: 34px 22px 26px;
+  display: flex;
+  flex-direction: column;
+}
+.brandRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  width: 72px;
+  height: 48px;
+  display: grid;
+  place-content: center;
+  color: var(--ink);
+}
+.brandMark {
+  display: block;
+  width: 72px;
+  height: 48px;
+}
+.contents {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.portfolioLabel {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 12px 10px 45px;
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.navLink {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 14px;
+  color: var(--muted);
+  font-size: 13px;
+  border-radius: 10px;
+  transition:
+    background 0.15s,
+    color 0.15s;
+  min-height: 48px;
+}
+.navLink:hover {
+  background: var(--soft);
+  color: var(--ink);
+}
+.navLink.active {
+  color: var(--ink);
+  background: var(--soft);
+  font-weight: 600;
+}
+.activeDot {
+  margin-left: auto;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background: var(--green);
+}
+.bottom {
+  margin-top: auto;
+  padding-top: 40px;
+}
+.smallNote {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 0 12px 28px;
+}
+.themeToggle {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin: 16px 0 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--soft);
+  padding: 4px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 22px;
+}
+.themeToggle > span {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  line-height: 1;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+.themeToggle > span[data-active='true'] {
+  background: var(--surface);
+  color: var(--ink);
+}
+.themeToggle:hover {
+  color: var(--ink);
+}
+.socials {
+  display: flex;
+  gap: 10px;
+  padding: 14px 12px 20px;
+}
+.socials a {
+  width: 34px;
+  height: 34px;
+  background: var(--soft);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+}
+.status {
+  border-top: 1px solid var(--line);
+  padding: 22px 8px 0;
+  color: var(--muted);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 10px;
+}
+.status > span {
+  width: 6px;
+  height: 6px;
+  background: #43ac62;
+  border-radius: 50%;
+}
+.mobileToggle {
+  display: none;
+}
+@media (min-width: 1600px) {
+  .sidebar {
+    width: 260px;
+    padding-inline: 28px;
+  }
+}
+@media (max-width: 1000px) {
+  .sidebar {
+    width: 190px;
+    padding-inline: 16px;
+  }
+  .navLink {
+    padding-inline: 12px;
+  }
+  .status {
+    font-size: 9px;
+  }
+}
+@media (max-width: 700px) {
+  .sidebar {
+    inset: 0 0 auto;
+    width: 100%;
+    height: 72px;
+    padding: 12px 24px;
+  }
+  .brand {
+    height: 44px;
+  }
+  .mobileToggle {
+    display: block;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink);
+    border-radius: 8px;
+    font-size: 20px;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+  }
+  .contents {
+    display: none;
+    background: var(--surface);
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: 0 12px 35px #0001;
+    margin: 14px -8px 0;
+  }
+  .contents.open {
+    display: flex;
+  }
+  .portfolioLabel,
+  .smallNote,
+  .socials,
+  .status {
+    display: none;
+  }
+  .bottom {
+    padding-top: 12px;
+  }
+  .themeToggle {
+    min-height: 44px;
+    margin-top: 0;
+  }
+}
