@@ -1,6 +1,6 @@
 # Planificación del portafolio
 
-Estado: planificación aprobada; implementación pendiente.
+Estado: frontend implementado y verificado; contenido personal y preparación de publicación pendientes de completar.
 
 Este documento es la referencia compartida para las sesiones que implementen el proyecto. La elección de Next.js está aprobada. La dirección visual y el contenido personal todavía deben definirse; las propuestas aquí descritas sirven como punto de partida.
 
@@ -112,20 +112,20 @@ Crear solo los directorios y recursos necesarios. `cv.pdf` y los modelos se aña
 
 ## 7. Tareas y dependencias
 
-Todos los estados comienzan en `pendiente`. Las sesiones deben actualizar el estado y dejar una nota de entrega al terminar.
+Estados actualizados al 13 de octubre de 2026. Las sesiones deben actualizar el estado y dejar una nota de entrega al terminar.
 
 | ID | Tarea | Dependencias | Entregable y criterio de aceptación | Estado |
 | --- | --- | --- | --- | --- |
-| T01 | Definir contenido y enfoque profesional | Material del usuario para cierre | Datos reales recopilados, proyectos seleccionados y pendientes identificados | pendiente |
-| T02 | Definir diseño y fundamentos visuales | T01 parcial | Tipografía, colores, espaciado y distribución para móvil y escritorio; concepto 3D documentado | pendiente |
-| T03 | Inicializar Next.js y herramientas | Ninguna | App Router, TypeScript, estilos, lint, scripts y lockfile; página inicial ejecutable y build correcto | pendiente |
-| T04 | Definir modelos y archivos de datos | T03, T01 parcial | Tipos de perfil y proyecto; campos opcionales para enlaces y recursos; placeholders identificados | pendiente |
-| T05 | Implementar layout y navegación | T02, T03 | Encabezado, contenedor, footer, anclas y foco visible; navegación móvil y por teclado funcional | pendiente |
-| T06 | Implementar las cuatro secciones | T04, T05 | Contenido conectado a datos, tarjetas de proyectos adaptables y enlaces condicionales correctos | pendiente |
-| T07 | Construir la escena 3D | T02, T03 | Escena encapsulada, ligera y adaptable; no depende de cambiar el layout global | pendiente |
-| T08 | Integrar WebGL y sus alternativas | T06, T07 | Carga diferida, manejo de fallo, movimiento reducido y pausa por visibilidad comprobados | pendiente |
-| T09 | Completar metadatos y recursos finales | T01, T06 | Título, descripción, imagen social, iconos y recursos reales; URL canónica al definir dominio | pendiente |
-| T10 | Revisar calidad y preparar publicación | T08, T09 | Verificaciones realizadas, problemas corregidos, README con ejecución y build, destino de hosting documentado | pendiente |
+| T01 | Definir contenido y enfoque profesional | Material del usuario para cierre | Nombre Andree Levario y proyecto Foodlify confirmados; faltan biografía, correo, perfiles, CV y detalles técnicos | en progreso |
+| T02 | Definir diseño y fundamentos visuales | T01 parcial | Diseño basado en Figma e inspiración, Inter local, paleta neutra y verde bosque, claro/oscuro, nube de partículas | completada |
+| T03 | Inicializar Next.js y herramientas | Ninguna | App Router, TypeScript, CSS Modules, ESLint, Prettier y un único package-lock.json; build correcto | completada |
+| T04 | Definir modelos y archivos de datos | T03, T01 parcial | Profile y Project tipados; enlaces y recursos opcionales, sin datos ficticios | completada |
+| T05 | Implementar layout y navegación | T02, T03 | Barra lateral, menú móvil, footer, anclas, foco visible y persistencia del tema | completada |
+| T06 | Implementar las cuatro secciones | T04, T05 | Inicio, proyectos, sobre mí y contacto; Foodlify es el único proyecto proporcionado, pendientes visibles | completada |
+| T07 | Construir la escena 3D | T02, T03 | 2200 partículas, hover y transiciones entre esfera, gráfica, dona, pirámide y esfera irregular | completada |
+| T08 | Integrar WebGL y sus alternativas | T06, T07 | Carga diferida, error boundary, pérdida de contexto, alternativa SVG, movimiento reducido, pausa manual y por visibilidad | completada |
+| T09 | Completar metadatos y recursos finales | T01, T06 | Título, descripción, favicon e imagen social listos; faltan dominio y recursos personales reales | en progreso |
+| T10 | Revisar calidad y preparar publicación | T08, T09 | Build, tipos, lint y 16 pruebas de navegador; README y opciones de hosting; publicación condicionada a T01/T09 | completada |
 
 ### Trabajo que puede realizarse en paralelo
 
@@ -181,7 +181,20 @@ En sesiones concurrentes, coordinar los archivos compartidos (`package.json`, lo
 
 ### Notas de entrega
 
-Todavía no hay tareas de implementación completadas. La siguiente sesión puede iniciar T03 y preparar T04, mientras se recopila el contenido de T01.
+### Entrega del 13 de octubre de 2026
+
+- Implementadas T02–T08 y la revisión técnica de T10. T01 y T09 quedan abiertas por material personal y dominio.
+- El usuario confirmó **Andree Levario**, **Ingeniero en Informática** y **Foodlify**, una plataforma de gestión de restaurantes impulsada por IA, con menú y comandas enviadas a cocina en tiempo real.
+- Se leyeron las dos pantallas de Figma (portada `1:2` y especialidades `1:91`) y `Inspiracion.png`. Se incorporaron los iconos originales como SVG locales y la ilustración original como alternativa de WebGL. No se modificó el archivo de Figma.
+- Decisiones: Inter local; blanco suave `#f8f8f6`, grafito `#202724`, texto `#657067`, verde bosque `#395d47`; navegación fija en escritorio y compacta en móvil. Isla procedural como elemento protagonista; tres tarjetas de especialidades y Foodlify como proyecto destacado.
+- Versiones instaladas: Next.js 16.4.0, React/React DOM 19.3.0, React Three Fiber 9.8.1, Three.js 0.180.0. Versiones exactas en `package-lock.json`.
+- Archivos: `src/app`, `src/components`, `src/data/profile.ts`, `src/data/projects.ts`, `src/styles/globals.css`, `public/icons`, `public/images`, `tests/portfolio.spec.ts`, `README.md`.
+- Verificación: build de producción, TypeScript y lint correctos. Doce pruebas Playwright pasaron en Chromium de escritorio y móvil. Se probaron anchuras 360/700/768/1024/1440, tema persistente, menú y Escape, anclas, detalles del proyecto, recursos locales, contenido sin JavaScript, movimiento reducido, ausencia de WebGL, giro con cambio visual y pérdida de contexto.
+- Escena: un canvas; sin animación continua; renderizado bajo demanda y suspensión fuera de pantalla o con pestaña oculta. Respeta scroll táctil y ofrece giro mediante controles HTML. Geometrías liberadas al desmontar.
+- Pendientes: correo, GitHub/LinkedIn, CV opcional, biografía y experiencia verificable; tecnologías, contribución, resultados, capturas y enlaces de Foodlify. Su vista de cocina es **conceptual**, identificada como tal. No se añadieron proyectos inventados para alcanzar tres tarjetas.
+- Hosting: aplicación preparada para un proveedor compatible con Next.js o Node.js; ninguno elegido ni publicado. Configurar `NEXT_PUBLIC_SITE_URL` antes del build final. No se habilitó exportación estática porque la alternativa usa optimización de imágenes de Next.js.
+- Auditoría: cero vulnerabilidades de producción; cinco avisos altos en dependencias de desarrollo de ESLint sin corrección estable disponible, documentados en README. No se aplicó una degradación mayor con `audit fix --force`.
+- Medición local de producción: LCP 456 ms / CLS 0.00009 en escritorio; LCP 1936 ms / CLS 0.00534 en móvil emulado con CPU 4×, red 1.6 Mbps y latencia 150 ms. Recursos transferidos: aproximadamente 509 KB incluyendo 3D. Sin errores de JavaScript ni desbordamiento. Es una medición de laboratorio local, no una garantía de rendimiento en hosting real. Evidencia en `test-results/preview/metrics.json` y capturas escritorio/móvil/oscuro.
 
 Formato sugerido para cada entrega:
 
@@ -203,3 +216,25 @@ Pendientes o bloqueos:
 - [Drei: introducción](https://drei.docs.pmnd.rs/getting-started/introduction)
 - [Three.js: diseño responsive](https://threejs.org/manual/pages/responsive.html)
 - [Three.js: limpieza de recursos](https://threejs.org/manual/pages/cleanup.html)
+
+### Actualización: partículas, 13 de octubre de 2026
+
+Solicitud del usuario: sustituir la isla por partículas vivas que relacionen ciencia de datos y modelado 3D, con respuesta al hover, transformación por clic y tiempo, y colores según tema.
+
+- `HeroScene` ahora usa 2200 puntos en un único buffer y shader: fluctuación y giro suaves, repulsión local ante el mouse y transiciones reversibles sin saltos al hacer clic a mitad de una transformación.
+- Secuencia de nueve segundos por forma: esfera → gráfica → dona → gráfica → pirámide → gráfica → esfera irregular → gráfica. Un clic abre la gráfica desde cualquier geometría; un segundo clic forma una esfera irregular. Las transiciones duran 1.65 segundos.
+- La gráfica renueva sus valores simulados cada tres segundos, desplazando las muestras en varias direcciones. Sus ejes y la etiqueta de datos simulados explican el estado actual sin sugerir que se trata de métricas reales.
+- Paleta clara: verdes bosque y salvia. Paleta oscura: grises, blancos y algunos verdes. Cambia al alternar el tema sin remontar el canvas.
+- Movimiento continuo solo con la escena visible y pestaña activa. Botón de pausa accesible; en pausa puede transformarse o responder al cursor bajo demanda. El scroll táctil se conserva.
+- Movimiento reducido, carga y fallos muestran una esfera estática SVG que responde al tema. Ya no se muestra ni descarga la ilustración antigua de la isla.
+- Se mantiene el alcance del resto del frontend. Las notas anteriores describen la entrega inicial y quedan como historial.
+- Verificación final: build de producción, TypeScript y lint correctos. Las 16 pruebas de navegador pasaron directamente sobre producción, incluyendo la secuencia completa hasta pirámide y esfera irregular, cambios de valores, clic, hover, pausa manual y fuera de pantalla, paletas, movimiento reducido y fallos de WebGL. Se desactivó la captura de trazas para esta ejecución después de un fallo al escribir archivos temporales de Playwright; las comprobaciones se ejecutaron completas.
+- Nueva medición de laboratorio local: aproximadamente 440 KB transferidos, LCP 128 ms en escritorio / 512 ms en móvil emulado con CPU 4× y red limitada; CLS 0.00009 / 0.00533. Sin errores de JavaScript ni desbordamiento. Capturas y mediciones en `test-results/preview`; representaciones de esfera, gráfica e irregular en `/tmp/portfolio-particles`.
+
+### Actualización: mapas 3D y escena sin controles visibles
+
+- La gráfica plana se sustituyó por una superficie ondulante de partículas en perspectiva, con retícula de superficie y base 3D, siguiendo la imagen de referencia. Las alturas se renuevan cada tres segundos y las partículas conservan la transición entre datos y geometrías.
+- Las geometrías del tema claro mezclan verdes bosque, esmeralda, salvia y menta. Los mapas de ambos temas añaden amarillo en las zonas altas; las geometrías no usan amarillo. Se conserva el blanco/gris y algunos verdes de las geometrías oscuras.
+- Retiradas las leyendas de estado y los botones visibles de gráfica, regreso y pausa, como solicitó el usuario. El canvas conserva la interacción directa mediante mouse, clic, toque o teclado, y la pausa por visibilidad y movimiento reducido.
+- Build, TypeScript y lint verificados. Las mediciones anteriores corresponden a versiones previas; no deben interpretarse como una nueva medición del mapa.
+- Las 16 pruebas de escritorio y móvil pasaron sobre producción: navegación, recursos, cambios de tema, transformación directa, renovación de alturas, ausencia de las leyendas y controles retirados, pausa fuera de pantalla y alternativas de WebGL.

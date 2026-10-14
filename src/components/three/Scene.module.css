@@ -1,0 +1,107 @@
+.scene {
+  position: relative;
+  width: 100%;
+  max-width: 530px;
+  margin-inline: auto;
+}
+.viewport {
+  position: relative;
+  height: 415px;
+  isolation: isolate;
+}
+.fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+.fallback svg {
+  width: 82%;
+  max-width: 350px;
+  height: 90%;
+}
+.shade0 {
+  fill: #2b593e;
+}
+.shade1 {
+  fill: #27884b;
+}
+.shade2 {
+  fill: #4f9c75;
+}
+.shade3 {
+  fill: #81965b;
+}
+.shade4 {
+  fill: #8ec89b;
+}
+:global([data-theme='dark']) .shade0 {
+  fill: #727d75;
+}
+:global([data-theme='dark']) .shade1 {
+  fill: #a1aba4;
+}
+:global([data-theme='dark']) .shade2 {
+  fill: #d0d6d1;
+}
+:global([data-theme='dark']) .shade3 {
+  fill: #eff3ed;
+}
+:global([data-theme='dark']) .shade4 {
+  fill: #91c27d;
+}
+.hint {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  color: var(--muted);
+  padding: 12px 0;
+}
+.hint img {
+  opacity: 0.65;
+}
+.liveScene {
+  position: absolute;
+  inset: 0;
+}
+.particleSurface {
+  height: 100%;
+  position: relative;
+  touch-action: pan-y;
+}
+.sceneHitArea {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 16px;
+  touch-action: pan-y;
+}
+.sceneHitArea:focus-visible {
+  outline-offset: -6px;
+}
+@media (min-width: 1600px) {
+  .viewport {
+    height: 460px;
+  }
+}
+@media (max-width: 1100px) {
+  .viewport {
+    height: 350px;
+  }
+}
+@media (max-width: 700px) {
+  .viewport {
+    height: 330px;
+  }
+  .scene {
+    max-width: 400px;
+  }
+  .hint {
+    font-size: 9px;
+  }
+}

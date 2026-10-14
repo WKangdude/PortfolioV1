@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="64" viewBox="0 0 96 64" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">AL — Andree Levario</title>
+  <desc id="desc">Monograma geométrico AL con una base compartida y un punto verde que representa un dato.</desc>
+  <path d="M10 52 28 12 46 52M18.1 34H37.9M46 12V52H68" stroke="#202724" stroke-width="6" stroke-linecap="square" stroke-linejoin="round"/>
+  <circle cx="82" cy="51" r="4.5" fill="#395d47"/>
+</svg>
